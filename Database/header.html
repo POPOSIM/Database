@@ -1,0 +1,87 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html;	charset=utf-8">
+<link href="css/css.css" rel="stylesheet" type="text/css">
+<script language="JavaScript">
+<!--
+//顯示當前時間
+function ndate(){
+	var isnMonth = new Array("1月","2月","3月","4月","5月",
+					"6月","7月","8月","9月","10月","11月","12月");
+	var isnDay = new Array("星期日","星期一","星期二",
+					"星期三","星期四","星期五","星期六","星期日");
+	today = new Date () ;
+	Year=today.getYear();
+	Date=today.getDate();
+	if (document.all)
+	document.write("&nbsp;&nbsp;"+Year+"年"
+					+isnMonth[today.getMonth()]+Date+"日"
+					+isnDay[today.getDay()]);
+}
+//清空表單輸入內容
+function clear_form(form_name)
+{
+	f = eval(form_name);
+	form_a = f.elements;
+	for(i=0;i<form_a.length;i++)
+	{
+		if((form_a[i].type == 'text'||form_a[i].type == 'textarea')
+			&&form_a[i].readOnly == false)
+		form_a[i].value = "";
+		if(form_a[i].type == 'checkbox')
+		form_a[i].checked = false;
+	}
+}
+//清除字串左側空格
+function LTrim(str)
+{
+var i;
+	for(i=0;i<str.length;i++)
+	{
+	if(str.charAt(i)!=" ") break;
+	}
+str = str.substring(i,str.length);
+return str;
+}
+//清除字串右側空格
+function RTrim(str)
+{
+var i;
+	for(i=str.length-1;i>=0;i--)
+	{
+	if(str.charAt(i)!=" ") break;
+	}
+str = str.substring(0,i+1);
+return str;
+}
+//
+function Trim(str)
+{
+return LTrim(RTrim(str));
+}
+//-->
+</script>
+</head>
+<table width="954" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td  width="950" height="200"><img src="images/topic.jpg" width="954" height="232" border="0" usemap="#Map"></td>
+  </tr>
+</table>
+<table width="950" border="0" align="center" cellpadding="0" cellspacing="0">
+<tr> 
+  <td height="26" align="left" background="images/line.jpg">
+<marquee direction='left' width='950' 	height='12px' scrollamount='2' scrolldelay='100'onmouseout='this.start()' onmouseover='this.stop()'>
+&nbsp;&nbsp;<img src="images/run.gif" width="8" height="8">&nbsp;&nbsp;歡迎光臨　↙資科‧異言堂↗　，希望您在這裏能渡過開心快樂！！！
+</marquee></td>
+  </tr>
+</table>
+
+<map name="Map">
+<area shape="rect" coords="190,170,260,194" href="./manage/file_add_1.php">
+<area shape="rect" coords="102,170,167,193" href="leaveword_add.php">
+<area shape="rect" coords="278,170,353,193" href="./manage/index.php">
+<area shape="rect" coords="365,170,409,192" href="./manage/login.php">
+<area shape="rect" coords="40,169,88,195" href="./index.php">
+</map>
